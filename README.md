@@ -20,22 +20,26 @@ A simple **Spring Boot REST API** that calculates customer reward points based o
 
 
 ## How to Run
+
 Clone the repository:
 git clone https://github.com/nityayekkiralawork/loyalty-rewards-service.git
 
 cd loyalty-rewards-service
 
 **Run using maven wrapper:**
+
 ./mvnw clean install
 
 ./mvnw spring-boot:run
 
 **Run from IDE:**
+
 Load Maven project & wait for dependencies to load.
 
 Navigate to LoyaltyRewardsServiceApplication.java and click Run.
 
 **API endpoints:**
+
 applictaion runs on: http://localhost:8080
 
 h2 Db console: http://localhost:8080/h2-console
@@ -43,8 +47,10 @@ h2 Db console: http://localhost:8080/h2-console
 GET htpp://localhost:8080/api/rewards/customer/{customerId}?months=3
 
 **months** **is optional & if not provided will be defaulted to 3**
+
 Replace customerId and months as needed.
 
-Notes
+## Notes
 rewards-app.log is ignored and will not be pushed to GitHub.
+
 Exception messages include customerId for easier debugging.
