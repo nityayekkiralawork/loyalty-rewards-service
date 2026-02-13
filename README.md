@@ -9,7 +9,7 @@ A simple **Spring Boot REST API** that calculates customer reward points based o
   - $51–100: 1 point per $1 over $50
   - Above $100: 50 points + 2 points per $1 over $100
 - Aggregates points per month for each customer
-- Supports filtering by last N months**
+- Supports filtering by last N months
 - Global exception handling for smooth error messages
 
 ## Requirements
