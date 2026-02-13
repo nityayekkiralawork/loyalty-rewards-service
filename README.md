@@ -20,9 +20,8 @@ A simple **Spring Boot REST API** that calculates customer reward points based o
 
 
 ## How to Run
-
-1. Clone the repository:
-git clone https://github.com/<your-username>/loyalty-rewards-service.git
+Clone the repository:
+git clone https://github.com/nityayekkiralawork/loyalty-rewards-service.git
 
 cd loyalty-rewards-service
 
