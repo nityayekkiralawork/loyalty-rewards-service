@@ -44,7 +44,7 @@ applictaion runs on: http://localhost:8080
 
 h2 Db console: http://localhost:8080/h2-console
 
-GET htpp://localhost:8080/api/rewards/customer/{customerId}?months=3
+GET http://localhost:8080/api/rewards/customer/{customerId}?months=3
 
 **months** **is optional & if not provided will be defaulted to 3**
 
