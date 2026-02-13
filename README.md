@@ -29,7 +29,7 @@ cd loyalty-rewards-service
 API endpoints (examples):
 
 GET /rewards/{customerId}?months=3
-POST /transactions
+months is optional & if not provided will be defaulted to 3
 Replace customerId and months as needed.
 
 Notes
