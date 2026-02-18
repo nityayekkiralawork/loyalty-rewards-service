@@ -20,3 +20,5 @@ INSERT INTO CUSTOMER_TRANSACTION(customer_id, amount, transaction_date)
 VALUES(102, 150, '2025-02-01');
 INSERT INTO CUSTOMER_TRANSACTION(customer_id, amount, transaction_date)
 VALUES(102, 120, '2023-08-01');
+INSERT INTO CUSTOMER_TRANSACTION(customer_id, amount, transaction_date)
+VALUES(110, 120, '2023-08-01');
