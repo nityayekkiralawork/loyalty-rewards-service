@@ -2,7 +2,7 @@ package com.retailsco.loyalty.service;
 
 import com.retailsco.loyalty.dto.RewardsResponse;
 import com.retailsco.loyalty.entity.CustomerTransaction;
-import com.retailsco.loyalty.repository.CustomerTransactionRepo;
+import com.retailsco.loyalty.repository.CustomerTransactionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class CustomerRewardsServiceTest {
     @Mock
-    CustomerTransactionRepo customerTransactionRepo;
+    CustomerTransactionRepository customerTransactionRepository;
     @InjectMocks
     CustomerRewardsServiceImpl customerRewardsService;
 
@@ -39,7 +39,7 @@ public class CustomerRewardsServiceTest {
                 new CustomerTransaction(4L, 101L, LocalDate.now().minusMonths(1), 100.0),
                 new CustomerTransaction(5L, 101L, LocalDate.now().minusMonths(3), 50.0),
                 new CustomerTransaction(6L, 101L, LocalDate.now().minusMonths(4), 25.0));
-        when(customerTransactionRepo.findByCustomerId(anyLong())).thenReturn(transactionList);
+        when(customerTransactionRepository.findByCustomerId(anyLong())).thenReturn(transactionList);
         RewardsResponse response = customerRewardsService.getCustomerRewards(101L, 6);
 
         assertEquals(165, response.totalPoints());

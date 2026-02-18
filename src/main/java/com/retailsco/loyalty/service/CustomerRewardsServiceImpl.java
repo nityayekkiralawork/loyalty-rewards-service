@@ -4,7 +4,7 @@ import com.retailsco.loyalty.dto.MonthlyReward;
 import com.retailsco.loyalty.dto.RewardsResponse;
 import com.retailsco.loyalty.entity.CustomerTransaction;
 import com.retailsco.loyalty.exception.RewardsException;
-import com.retailsco.loyalty.repository.CustomerTransactionRepo;
+import com.retailsco.loyalty.repository.CustomerTransactionRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,17 +17,28 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Service implementation for calculating customer reward points.
+ */
 @Service
 @RequiredArgsConstructor
 public class CustomerRewardsServiceImpl implements CustomerRewardsService {
-    private final CustomerTransactionRepo customerTransactionRepo;
+    private final CustomerTransactionRepository customerTransactionRepository;
     private static final Logger log = LoggerFactory.getLogger(CustomerRewardsServiceImpl.class);
 
+    /**
+     * Calculates reward details for a customer.
+     *
+     * @param customerId customer identifier
+     * @param months number of months to calculate rewards for
+     * @return RewardsResponse containing monthly rewards and total points
+     * @throws RewardsException if no transactions are found
+     */
     @Override
     public RewardsResponse getCustomerRewards(Long customerId, int months) {
         log.info("CustomerRewardsService getCustomerRewards customerId={} months={}", customerId, months);
 
-        List<CustomerTransaction> rewardsList = customerTransactionRepo.findByCustomerId(customerId);
+        List<CustomerTransaction> rewardsList = customerTransactionRepository.findByCustomerId(customerId);
         if (rewardsList.isEmpty()) {
             throw new RewardsException("No transactions found for customerId=" + customerId);
         }
