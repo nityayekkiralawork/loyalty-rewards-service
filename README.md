@@ -54,3 +54,73 @@ Replace customerId and months as needed.
 rewards-app.log is ignored and will not be pushed to GitHub.
 
 Exception messages include customerId for easier debugging.
+
+
+##Sample Requests & Responses
+
+GET http://localhost:8080/api/rewards/customer/101
+
+{
+    "customerId": 101,
+    "monthlyRewards": [
+        {
+            "monthYear": "December 2025",
+            "points": 50
+        },
+        {
+            "monthYear": "January 2026",
+            "points": 20
+        },
+        {
+            "monthYear": "February 2026",
+            "points": 180
+        }
+    ],
+    "totalPoints": 250
+}
+
+
+
+
+GET http://localhost:8080/api/rewards/customer/102?months=24
+
+{
+    "customerId": 102,
+    "monthlyRewards": [
+        {
+            "monthYear": "February 2025",
+            "points": 150
+        },
+        {
+            "monthYear": "August 2025",
+            "points": 90
+        },
+        {
+            "monthYear": "January 2026",
+            "points": 250
+        },
+        {
+            "monthYear": "February 2026",
+            "points": 180
+        }
+    ],
+    "totalPoints": 670
+}
+
+
+
+GET http://localhost:8080/api/rewards/customer/10999?months=24
+
+No transactions found for customerId=10999
+
+
+
+GET http://localhost:8080/api/rewards/customer/ABC?months=24
+
+Method parameter 'customerId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "ABC"
+
+
+
+http://localhost:8080/api/rewards/customer/101000?months=24/0
+
+Method parameter 'months': Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: "24/0"
