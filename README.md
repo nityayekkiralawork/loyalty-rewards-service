@@ -119,7 +119,7 @@ GET http://localhost:8080/api/rewards/customer/102?months=24
 
 ---
 
-### ❌ No Transactions Found
+### No Transactions Found
 
 **Request**
 ```
