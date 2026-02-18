@@ -82,6 +82,9 @@ GET http://localhost:8080/api/rewards/customer/101
 
 
 
+
+
+
 GET http://localhost:8080/api/rewards/customer/102?months=24
 
 {
