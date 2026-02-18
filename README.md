@@ -133,6 +133,24 @@ No transactions found for customerId=10999
 
 ---
 
+### No Transactions Within Selected Months
+
+**Request**
+```
+GET http://localhost:8080/api/rewards/customer/110?months=1
+```
+
+**Response – 200 OK**
+```json
+{
+  "customerId": 110,
+  "monthlyRewards": [],
+  "totalPoints": 0
+}
+```
+
+---
+
 ### Invalid Customer ID
 
 **Request**
